@@ -1,0 +1,53 @@
+{% load static %}
+
+{% if instance %}
+    <div class="container power-of-banking my-5">
+        <div class="row flex-column-reverse flex-sm-row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div>
+                    <img src="{{ instance.poster.url }}" width="100%">
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-12 d-flex">
+                <div class="row align-content-lg-end align-content-md-center mx-auto ml-lg-5 pb-lg-5">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h3 class="text-secondary"><strong>{{ instance.title }}</strong></h3>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <span class="text-secondary">{{ instance.subtitle }}</span>
+                            </div>
+                        </div>
+                        <div class="row hide-buttons pt-3">
+                            <div class="col-lg-3 col-md-5 col-sm-0">
+                                <a href="#" target="_blank">
+                                    <img src="{% static 'images/ios.0f7094475065.png' %}" width="100%"/>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-5 col-sm-0">
+                                <a href="#" target="_blank">
+                                    <img src="{% static 'images/android.6cb1fb061ebe.png' %}" width="100%"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <img src="{{ instance.logo.url }}" alt="logo" width="120px">
+                            </div>
+                        </div>
+                        <div class="row pt-3">
+                            <div class="col">
+                                <p class="text-secondary"><strong>{{ instance.logo_subtitle }}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <h1>No data to show</h1>
+{% endif %}

@@ -1,0 +1,1 @@
+DEFAULT_APP_CONFIG="powerOfBanking.apps.PowerofbankingConfig"

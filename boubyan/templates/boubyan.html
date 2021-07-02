@@ -1,0 +1,47 @@
+{% load cms_tags menu_tags sekizai_tags static %}
+<!doctype html>
+<html>
+<head>
+    <title>{% block title %}{% page_attribute "page_title" %}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'boubyan/new.css' %}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    {% render_block "css" %}
+</head>
+<body>
+{% cms_toolbar %}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                {% show_menu 0 100 100 100 %}
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    {% block content %}
+        {% placeholder "content" %}
+    {% endblock content %}
+</main>
+<footer>
+
+</footer>
+<script src="{% static 'jquery/jquery.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+<script src="{% static 'boubyan/new.js' %}"></script>
+{% render_block "js" %}
+</body>
+</html>
